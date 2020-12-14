@@ -29,8 +29,10 @@ client.on('message', message =>{
 
     if(command === 'truth'){
         client.commands.get('truth').execute(message, args);
+    } else if(command === 'server'){
+        client.commands.get('server').execute(message, args);
     }
-})
+});
 
 
 
