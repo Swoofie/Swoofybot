@@ -20,4 +20,11 @@ Send a message           message.channel.send('Swoofy is wholesome')
 
 
 Add a role
-message.member.roles.add('roleid')
+ message.member.roles.add('roleid')
+
+
+Timer
+           message.channel.send('Deleted')
+            .then(msg => {
+                msg.delete({ timeout: 5000})
+            })

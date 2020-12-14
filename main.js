@@ -33,7 +33,8 @@ client.on('message', message =>{
         client.commands.get('server').execute(message, args);
     } else if(command === 'commands'){
         client.commands.get('commands').execute(message, args, Discord);
-    
+    } else if(command ==='clear'){
+        client.commands.get('clear').execute(message, args);
     }
 });
 
