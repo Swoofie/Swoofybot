@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Swoofie/Swoofybot/issues"
   },
-  "homepage": "https://github.com/Swoofie/Swoofybot#readme"
+  "homepage": "https://github.com/Swoofie/Swoofybot#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  }
 }
