@@ -1,0 +1,19 @@
+{
+  "name": "swoofybot",
+  "version": "1.0.0",
+  "description": "Swoofs Discord Bot",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Swoofie/Swoofybot.git"
+  },
+  "author": "Phoebe Dee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Swoofie/Swoofybot/issues"
+  },
+  "homepage": "https://github.com/Swoofie/Swoofybot#readme"
+}
