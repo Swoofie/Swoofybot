@@ -17,5 +17,5 @@ client.once('ready', () => {
 
 
 //Keep login at end of document
-client.login('Nzg4MDQ0ODYzNzA1ODQxNjk1.X9dx-A.w5Kn1VFDKJmLyQdEgR9n8n5_pu0');
+client.login('');
 
