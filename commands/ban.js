@@ -2,13 +2,14 @@ module.exports = {
 
     name:'ban',
     description:'This command bans a member!',
-    execute(message, args){
-        if(message.member.hasPermission("ADMINISTRATOR")){
+    execute(message, args, Discord, client){
+        if(message.member.hasPermission("BAN_MEMBERS")){
         const target = message.mentions.users.first();
         if(target){
+            let logs = client.channels.cache.get('788194885466587176')
             const memberTarget = message.guild.members.cache.get(target.id);
             memberTarget.ban();
-            message.channel.send("User has been banned");
+            logs.send(`<@${memberTarget.user.id}> User banned`);
         }else{
             message.channel.send(`You coudn't ban that member!`);
         }
