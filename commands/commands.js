@@ -23,6 +23,8 @@ module.exports = {
             {name: '!clear', value: 'Clears messages 1-100', inline: true},
             {name: '!kick', value: 'Kicks a member', inline: true},
             {name: '!ban', value: 'Bans a member', inline: true},
+            {name: '!mute', value: 'Mute a member until !unmute is used or the specified time runs out', inline: true},
+            {name: '!unmute', value: 'Removed muted role from a member', inline: true},
         )
         
         
