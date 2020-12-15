@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const config = require('./config.json');
 const client = new Discord.Client();
 
-const prefix = '!';
+
 
 const fs = require('fs');
 
@@ -21,10 +21,10 @@ client.once('ready', () => {
 });
 
 client.on('message', message =>{
-    if(!message.content.startsWith(prefix) || message.author.bot)return;
+    if(!message.content.startsWith(config.prefix) || message.author.bot)return;
 
 
-    const args = message.content.slice(prefix.length).split(/ +/);
+    const args = message.content.slice(config.prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
 
     if(command === 'truth'){
