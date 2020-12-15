@@ -21,6 +21,8 @@ module.exports = {
             {name: '\u200b', value:'\u200b', inline: false},
             {name: 'Moderation Commands', value:'\u200b'},
             {name: '!clear', value: 'Clears messages 1-100', inline: true},
+            {name: '!kick', value: 'Kicks a member', inline: true},
+            {name: '!ban', value: 'Bans a member', inline: true},
         )
         
         
