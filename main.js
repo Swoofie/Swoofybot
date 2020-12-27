@@ -15,6 +15,12 @@ for (const file of commandFiles) {
     client.commands.set(command.name, command);
 }
 
+client.on('guildMemberAdd', guildMember =>{
+    let welcomeRole =guildMember.guild.roles.cache.find(role => role.name === 'Members');
+
+    guildMember.roles.add(welcomeRole);
+});
+
 
 client.once('ready', () => {
     console.log('Swoofy Bot is Online!');
