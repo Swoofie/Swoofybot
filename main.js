@@ -19,6 +19,7 @@ client.on('guildMemberAdd', guildMember =>{
     let welcomeRole =guildMember.guild.roles.cache.find(role => role.name === 'Members');
 
     guildMember.roles.add(welcomeRole);
+    guildMember.guild.channels.cache.get('792013923204464650').permissionsLocked(`<@${guildMember.user.id}> has joined Simul Tempest make sure to say hi`)
 });
 
 
