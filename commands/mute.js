@@ -3,7 +3,7 @@ module.exports = {
 
     name:'mute',
     description:'This command mutes a member',
-    execute(message, args, Discord, client){
+    execute(client, message, args, Discord){
         if(message.member.hasPermission("BAN_MEMBERS")){
         const target = message.mentions.users.first();
         if(target){

@@ -7,59 +7,11 @@ const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"]
 const fs = require('fs');
 
 client.commands = new Discord.Collection();
+client.events = new Discord.Collection();
 
-const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
-for (const file of commandFiles) {
-    const command = require(`./commands/${file}`);
-
-    client.commands.set(command.name, command);
-}
-
-client.on('guildMemberAdd', guildMember =>{
-    let welcomeRole =guildMember.guild.roles.cache.find(role => role.name === 'Members');
-
-    guildMember.roles.add(welcomeRole);
-    guildMember.guild.channels.cache.get('792013923204464650').permissionsLocked(`<@${guildMember.user.id}> has joined Simul Tempest make sure to say hi`)
-});
-
-
-client.once('ready', () => {
-    console.log('Swoofy Bot is Online!');
-});
-
-
-client.on('message', message => {
-    if (!message.content.startsWith(config.prefix) || message.author.bot) return;
-
-
-    const args = message.content.slice(config.prefix.length).split(/ +/);
-    const command = args.shift().toLowerCase();
-
-    if (command === 'truth') {
-        client.commands.get('truth').execute(message, args);
-    } else if (command === 'server') {
-        client.commands.get('server').execute(message, args);
-    } else if (command === 'commands') {
-        client.commands.get('commands').execute(message, args, Discord);
-    } else if (command === 'clear') {
-        client.commands.get('clear').execute(message, args);
-    } else if (command === 'kick') {
-        client.commands.get('kick').execute(message, args, Discord, client);
-    } else if (command === 'ban') {
-        client.commands.get('ban').execute(message, args, Discord, client);
-    } else if (command === 'mute') {
-        client.commands.get('mute').execute(message, args, Discord, client);
-    } else if (command === 'unmute') {
-        client.commands.get('unmute').execute(message, args, Discord, client);
-    }
-
-    });
-
-
-
-
-
-
+['command_handler' , 'event_handler'].forEach(handler =>{
+    require(`./handlers/${handler}`)(client, Discord);
+})
 
 
 //Keep login at end of document
