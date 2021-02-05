@@ -2,3 +2,4 @@ config.json
 admin/config.json
 **/SwoofybotOld/
 **/node_modules/
+.env

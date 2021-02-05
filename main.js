@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
-const config = require('./config.json');
 const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"] });
-
+require('dotenv').config();
 
 
 const fs = require('fs');
@@ -15,5 +14,5 @@ client.events = new Discord.Collection();
 
 
 //Keep login at end of document
-client.login(config.token)
+client.login(process.env.TOKEN);
 
