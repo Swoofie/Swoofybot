@@ -13,6 +13,7 @@ client.events = new Discord.Collection();
 })
 
 
+
 //Keep login at end of document
 client.login(process.env.TOKEN);
 
