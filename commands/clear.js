@@ -1,6 +1,7 @@
 module.exports = {
 
     name:'clear',
+    aliases: ['scrap','wipe','c'],
     description: "Clear Messages",
     async execute(client, message, args, Discord) {
         if(message.member.hasPermission("ADMINISTRATOR")){
